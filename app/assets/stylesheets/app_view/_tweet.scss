@@ -2,15 +2,51 @@
   box-sizing: border-box;
 }
 
-@font-face {
-  font-family: 'kaito';
-  src: font-url('Houstiny-Alt.otf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
+.wrapper{
+  width: 100%;
+  height: 100vh;
+  header{
+    width: 100%;
+    height: 80px;
+    background-color: red;
+    .title{
+      color: white;
+      font-size: 40px;
+      line-height: 80px;
+      padding-left: 20px;
+      font-weight: bold;
+    }
+  }
+  .contents{
+    width: 800px;
+    height: calc(100vh - 80px);
+    margin: 0 auto;
+    overflow: scroll;
+    .content{
+      margin-bottom: 10px;
+      padding: 10px;
+      border: outset 3px gray;
+      &__top{
+        position: relative;
+        &__lyric{
+          font-size: 30px;
+          padding-bottom: 20px;
+        }
+        &__info{
+          display: flex;
+          position: absolute;
+          top: 40px;
+          right: 0;
+          &__artist{
+            padding-right: 10px;
+          }
+        }
+      }
+      &__bottom{
+        border-top: solid 1px black;
+        padding-top: 15px;
+      }
+    }
+  }
 
-h1{
-  color: blue;
-  font-size: 80px;
-  font-family: 'kaito';
 }

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_07_072449) do
+ActiveRecord::Schema.define(version: 2020_03_07_123110) do
 
   create_table "tweets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "lyric", null: false
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2020_03_07_072449) do
     t.text "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "song_name"
   end
 
 end

@@ -3,3 +3,10 @@
 @import "app_view/tweet";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+
+@font-face {
+  font-family: 'kaito';
+  src: font-url('Houstiny-Alt.woff') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
