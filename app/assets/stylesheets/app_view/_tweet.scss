@@ -2,7 +2,15 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: 'kaito';
+  src: font-url('Houstiny-Alt.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 h1{
   color: blue;
   font-size: 80px;
+  font-family: 'kaito';
 }
