@@ -35,6 +35,7 @@ header{
           font-size: 30px;
           padding-bottom: 20px;
         }
+        
         &__info{
           display: flex;
           position: absolute;
@@ -48,6 +49,9 @@ header{
       &__bottom{
         border-top: solid 1px black;
         padding-top: 15px;
+        &__link{
+          padding-top: 15px;
+        }
       }
     }
   }

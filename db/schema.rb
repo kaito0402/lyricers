@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2020_03_07_123110) do
     t.text "lyric", null: false
     t.string "artist"
     t.text "link"
-    t.text "text"
+    t.text "text", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "song_name"
