@@ -1,27 +1,29 @@
 <div class="wrapper">
-  <header>
-    <div class="title">
-      Lyricers
-    </div>
-  </header>
   <div class="contents">
-    <div class="content">
-      <div class="content__top">
-        <div class="content__top__lyric">
-          生涯忘れぬことはないでしょう
-        </div>
-        <div class="content__top__info">
-          <div class="content__top__info__artist">
-            @ aiko
+    <% @tweets.each do |tweet| %>
+      <div class="content">
+        <div class="content__top">
+          <div class="content__top__lyric">
+            <%= tweet.lyric %>
           </div>
-          <div class="content__top__info__sn">
-            ♪カブトムシ
+          <div class="content__top__info">
+            <div class="content__top__info__artist">
+              @ <%= tweet.artist%>
+            </div>
+            <div class="content__top__info__sn">
+              ♪<%= tweet.song_name%>
+            </div>
+          </div>
+        </div>
+        <div class="content__bottom">
+          <div class="content__bottom__text">
+            <%= tweet.text%>
+          </div>
+          <div class="content__bottom__link">
+            <a href="<%= tweet.link %>" target="_blank">Music Link</a>
           </div>
         </div>
       </div>
-      <div class="content__bottom">
-        切ない感じが良い。
-      </div>
-    </div>
+    <% end %>
   </div>
 </div>

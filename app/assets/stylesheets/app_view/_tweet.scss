@@ -2,26 +2,30 @@
   box-sizing: border-box;
 }
 
+header{
+  width: 100%;
+  height: 80px;
+  background-color: red;
+  position: fixed;
+  .title{
+    color: white;
+    font-size: 40px;
+    line-height: 80px;
+    padding-left: 20px;
+    font-weight: bold;
+  }
+}
+
 .wrapper{
+  padding-top: 80px;
   width: 100%;
   height: 100vh;
-  header{
-    width: 100%;
-    height: 80px;
-    background-color: red;
-    .title{
-      color: white;
-      font-size: 40px;
-      line-height: 80px;
-      padding-left: 20px;
-      font-weight: bold;
-    }
-  }
   .contents{
     width: 800px;
     height: calc(100vh - 80px);
     margin: 0 auto;
     overflow: scroll;
+    padding-top: 20px;
     .content{
       margin-bottom: 10px;
       padding: 10px;
@@ -32,6 +36,7 @@
           font-size: 30px;
           padding-bottom: 20px;
         }
+        
         &__info{
           display: flex;
           position: absolute;
@@ -45,8 +50,42 @@
       &__bottom{
         border-top: solid 1px black;
         padding-top: 15px;
+        &__link{
+          padding-top: 15px;
+        }
       }
     }
   }
+}
 
+.new__wrapper{
+  padding-top: 80px;
+  width: 100%;
+  height: 100vh;
+  .form__content{
+    width: 1000px;
+    margin: auto;
+    
+    h1{
+      padding-top: 50px;
+    }
+    .form-group{
+      margin-top: 20px;
+      &--top{
+        margin-top: 20px;
+      }
+      &__midle{
+        width: 475px;
+      }
+      &__left{
+        margin-right: 50px;
+      }
+    }
+    .middle{
+      display: flex;
+    }
+    .btn{
+      margin-top: 30px;
+    }
+  }
 }

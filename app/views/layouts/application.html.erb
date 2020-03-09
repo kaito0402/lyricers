@@ -10,6 +10,18 @@
   </head>
 
   <body>
+    <header>
+      <div class="title">
+        Lyricers
+      </div>
+    </header>
+    <div class="notifications">
+      <% flash.each do |key, value| %>
+        <div class="<%= key %>">
+          <%= value %>
+        </div>
+      <% end %>
+    </div>
     <%= yield %>
   </body>
 </html>
