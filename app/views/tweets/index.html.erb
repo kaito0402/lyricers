@@ -22,6 +22,11 @@
           <div class="content__bottom__link">
             <a href="<%= tweet.link %>" target="_blank">Music Link</a>
           </div>
+          <div class="content__bottom__trash-btn">
+            <%= link_to tweet_path(tweet.id), method: :get do %>
+              <i class="fas fa-angle-double-right"></i>
+            <% end %>
+          </div>
         </div>
       </div>
     <% end %>
