@@ -11,30 +11,33 @@
 
   <body>
     <header>
-      <div class="title">
-        Lyricers
+    <div class="title">
+      <%= link_to "Lyricers", "/", class:"title__logo" %>
+    </div>
+    <div class="user__btn">
+      <div class="user__btn__search">
+        <%= link_to search_tweets_path, method: :get do %>
+          <i class="fas fa-search"></i>
+        <% end %>
       </div>
       <% if user_signed_in? %>
-        <div class="user__btn--true">
-          <div class="user__btn--true__new">
-            <%= link_to new_tweet_path, method: :get do %>
-              <i class="fas fa-plus"></i>
-            <% end %>
-          </div>
-          <div class="user__btn--true__btn">
-            <%= link_to "Log-out", "/users/sign_out", method: :delete, class: "btn btn-info btn-lg" %>
-          </div>
+        <div class="user__btn--new">
+          <%= link_to new_tweet_path, method: :get do %>
+            <i class="fas fa-plus"></i>
+          <% end %>
+        </div>
+        <div class="user__btn--log-out">
+          <%= link_to "Log-out", "/users/sign_out", method: :delete, class: "btn btn-info btn-lg" %>
         </div>
       <% else %>
-         <div class="user__btn">
-          <div class="user__btn-1">
-            <%= link_to "Sign-in", "/users/sign_up", class: "btn btn-light btn-lg user__btn-1__1", method: :get %>
-          </div>
-          <div class="user__btn-2">
-            <%= link_to "Log-in", "/users/sign_in", class: "btn btn-dark btn-lg user__btn-2__1", method: :get %>
-          </div>
+        <div class="user__btn--sign-in">
+          <%= link_to "Sign-in", "/users/sign_up", class: "btn btn-light btn-lg user__btn--sign-in__1", method: :get %>
+        </div>
+        <div class="user__btn--log-in">
+          <%= link_to "Log-in", "/users/sign_in", class: "btn btn-dark btn-lg user__btn-2__1", method: :get %>
         </div>
       <% end %>
+      </div>
     </header>
     <div class="notifications">
       <% flash.each do |key, value| %>
