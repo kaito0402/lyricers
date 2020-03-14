@@ -1,5 +1,5 @@
-<div class="wrapper">
-  <div class="contents">
+<div class="show--wrapper">
+  <div class="contents__show">
     <div class="content">
       <div class="content__top">
         <div class="content__top__lyric">
@@ -30,8 +30,33 @@
         <% end %>
       </div>
     </div>
+    <div class="coment-area">
+      <% if @comments %>
+        <% @comments.each do |comment|%>
+          <div class="height-line"></div>
+          <div class="comment-content">
+            <div class="comment-content__user-name" >
+              @<%= comment.user.name %>
+            </div>
+            <div class="comment-content__text">
+              <%= comment.text %>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
   </div>
   <div class="comment_form">
-    
+    <% if current_user %>
+      <h2>PLEASE POST YOUR COMMENT!!!</h2>
+      <%= form_with(model: [@tweet, @comment], local: true) do |form| %>
+        <div class="form-group">
+          <%= form.text_area :text, placeholder: "comment", class:"form-control text-area" %>
+        </div>
+        <%= form.submit "POST", class:"btn btn-danger btn-lg"%>
+      <% end %>
+      <% else %>
+        <h2>IF YOU WANT TO POST A COMMENT, PLEASE SING-UP↑</h2>
+    <% end %>
   </div>
 </div>
