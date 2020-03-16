@@ -9,6 +9,7 @@ header{
   position: fixed;
   display: flex;
   justify-content: space-between;
+  z-index: 5;
 }
 .title{
   font-size: 40px;
@@ -65,7 +66,8 @@ header{
   padding-top: 80px;
   width: 100%;
   height: 100vh;
-  background-color: rgba(212, 209, 209, 0.952);
+  background-image: url("https://cdn.pixabay.com/photo/2015/05/15/14/50/concert-768722_1280.jpg");
+  background-size: cover;
   .contents{
     width: 800px;
     height: calc(100vh - 80px);
@@ -78,7 +80,6 @@ header{
       border: outset 3px gray;
       background-color: whitesmoke;
       &__top{
-       
         &__lyric{
           font-size: 32px;
           padding-bottom: 20px;
@@ -88,7 +89,6 @@ header{
           position: relative;
           top: 0px;
           left:0px;
-          
           &__artist{
             padding-right: 10px;
           }
@@ -97,21 +97,23 @@ header{
       &__bottom{
         border-top: solid 1px black;
         padding-top: 15px;
-        position: relative;
         font-size: 24px;
-        &__link{
-          padding-top: 15px;
-          font-size: 16px;
-        }
-        &__trash-btn{
-          position: absolute;
-          right: 10px;
-          top: 30px;
-          font-size: 32px;
-          padding: 16px 8px 16px 8px;
-          
-          .fas{
-            color: black;
+        &__bottom{
+          height: 48px;
+          display: flex;
+          justify-content: space-between;
+          &__link{
+            padding-top: 15px;
+            font-size: 16px;
+          }
+          &__trash-btn{
+            font-size: 40px;
+            padding: 16px 8px 16px 8px;
+            position: relative;
+              bottom: 16px;
+            .fas{
+              color: black;
+            }
           }
         }
       }
@@ -120,7 +122,9 @@ header{
 }
 
 .new__wrapper{
-  padding-top: 80px;
+  background-image: url("https://cdn.pixabay.com/photo/2016/02/19/11/36/microphone-1209816_1280.jpg");
+  background-size: cover;
+  padding-top: 100px;
   width: 100%;
   height: 100vh;
   .form__content{
@@ -129,6 +133,7 @@ header{
     
     h1{
       padding-top: 50px;
+      color: white;
     }
     .form-group{
       margin-top: 20px;
@@ -149,11 +154,5 @@ header{
       margin-top: 30px;
     }
   }
-}
-
-.user_wrapper{
-  padding-top: 100px;
-  width: 100%;
-  height: 100vh;
 }
 

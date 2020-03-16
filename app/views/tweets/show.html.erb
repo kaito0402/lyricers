@@ -18,16 +18,18 @@
         <div class="content__bottom__text">
           <%= @tweet.text%>
         </div>
-        <div class="content__bottom__link">
-          <a href="<%= @tweet.link %>" target="_blank">Music Link</a>
-        </div>
-        <% if user_signed_in? && @tweet.user_id == current_user.id%>
-          <div class="content__bottom__trash-btn">
-            <%= link_to tweet_path(@tweet.id), method: :delete do %>
-              <i class="fas fa-trash-alt"></i>
-            <% end %>
+        <div class="content__bottom__bottom">
+          <div class="content__bottom__bottom__link">
+            <a href="<%= @tweet.link %>" target="_blank">Music Link</a>
           </div>
-        <% end %>
+          <% if user_signed_in? && @tweet.user_id == current_user.id%>
+            <div class="content__bottom__bottom__trash-btn">
+              <%= link_to tweet_path(@tweet.id), method: :delete do %>
+                <i class="fas fa-trash-alt trash-btn"></i>
+              <% end %>
+            </div> 
+          <% end %>
+        </div>
       </div>
     </div>
     <div class="coment-area">
@@ -48,7 +50,7 @@
   </div>
   <div class="comment_form">
     <% if current_user %>
-      <h2>PLEASE POST YOUR COMMENT!!!</h2>
+      <h2>PLEASE LEAVE YOUR COMMENT!!!</h2>
       <%= form_with(model: [@tweet, @comment], local: true) do |form| %>
         <div class="form-group">
           <%= form.text_area :text, placeholder: "comment", class:"form-control text-area" %>

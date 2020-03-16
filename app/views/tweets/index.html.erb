@@ -4,28 +4,30 @@
       <div class="content">
         <div class="content__top">
           <div class="content__top__lyric">
-            <%= tweet.lyric %>
+            <%=safe_join(tweet.lyric.split("\n"),tag(:br))%>
           </div>
           <div class="content__top__info">
             <div class="content__top__info__artist">
               @ <%= tweet.artist%>
             </div>
             <div class="content__top__info__sn">
-              ♪<%= tweet.song_name%>
+              ♪ <%= tweet.song_name%>
             </div>
           </div>
         </div>
         <div class="content__bottom">
           <div class="content__bottom__text">
-            <%= tweet.text%>
+            <%=safe_join(tweet.text.split("\n"),tag(:br))%>
           </div>
-          <div class="content__bottom__link">
-            <a href="<%= tweet.link %>" target="_blank">Music Link</a>
-          </div>
-          <div class="content__bottom__trash-btn">
-            <%= link_to tweet_path(tweet.id), method: :get do %>
-              <i class="fas fa-angle-double-right"></i>
-            <% end %>
+          <div class="content__bottom__bottom">
+            <div class="content__bottom__bottom__link">
+              <a href="<%= tweet.link %>" target="_blank">Music Link</a>
+            </div>
+            <div class="content__bottom__bottom__trash-btn">
+              <%= link_to tweet_path(tweet.id), method: :get do %>
+                <i class="fas fa-angle-double-right"></i>
+              <% end %>
+            </div>
           </div>
         </div>
       </div>
