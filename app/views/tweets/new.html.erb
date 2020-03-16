@@ -1,9 +1,9 @@
-<div class="new__wrapper">
+<div class="user__wrapper__signup">
     <div class="form__content">
       <%= form_with(model: @tweet, local: true) do |form| %>
         <h1>POST YOUR LYRIC</h1>
         <div class="form-group">
-          <%= form.text_field :lyric, class:"form-control form-group--top", placeholder: "lyric come on!" %>
+          <%= form.text_area :lyric, class:"form-control form-group--top", placeholder: "lyric come on!" %>
         </div>
         <div class="middle">
           <div class="form-group">

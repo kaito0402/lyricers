@@ -1,0 +1,55 @@
+.user_wrapper__login{
+  padding: 104px 0 0 24px;
+  width: 100%;
+  height: 100vh;
+  background-image: url("https://cdn.pixabay.com/photo/2018/06/30/09/29/music-3507317__480.jpg");
+  background-size: cover;
+  h2{
+    color: white;
+  }
+  .new_user{
+    &__email{
+      color: white;
+      padding-bottom: 10px;
+    }
+    &__password{
+      color: white; 
+    }
+    &__check{
+      color: white;
+    }
+  }
+}
+
+.user_wrapper__signup{
+  padding: 104px 0 0 24px;
+  width: 100%;
+  height: 100vh;
+  background-image: url("https://cdn.pixabay.com/photo/2015/04/27/11/48/sign-741813__480.jpg");
+  background-size: cover;
+  h2{
+    color: white;
+  }
+  .new_user{
+    &__name{
+      color: white;
+      padding-bottom: 8px;
+    }
+    &__email{
+      color: white;
+      padding-bottom: 8px;
+    }
+    &__password{
+      color: white;
+      padding-bottom: 8px;
+    }
+    &__password__con{
+      color: white;
+      padding-bottom: 8px;
+    }
+    .actions{
+      padding-top: 16px;
+    }
+  }
+  
+}

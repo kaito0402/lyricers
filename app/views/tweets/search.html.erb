@@ -1,0 +1,18 @@
+<div class="search-wrapper">
+  <div class="search-wrapper__right">
+    <h1>SEARCH ZONE</h1>
+    <%= form_with(url: search_tweets_path, local: true, method: :get, class: "search-form") do |form|%>
+      <div class="form-group">
+        <%= form.text_field :keyword, placeholder: "KeyWord", class: "form-control search-form__text"%>
+      </div>
+      <%= form.submit "Let's search", class: "btn btn-danger btn-lg"%>
+    <% end %>
+  </div>
+  <div class="search-wrapper__left">
+    <div class="contents">
+      <% @tweets.each do |tweet| %>
+        <%= render partial: "layouts/tweet", locals: { tweet: tweet }%>
+      <% end %>
+    </div>
+  </div>
+</div>

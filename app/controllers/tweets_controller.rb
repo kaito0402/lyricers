@@ -1,5 +1,5 @@
 class TweetsController < ApplicationController
-  before_action :move_to_index, except: [:index, :show]
+  before_action :move_to_index, except: [:index, :show, :search]
   def index
     @tweets = Tweet.includes(:user).order("created_at DESC")
   end
@@ -11,7 +11,7 @@ class TweetsController < ApplicationController
   def create
     @tweet = Tweet.new(tweet_params)
     if @tweet.save
-      redirect_to root_path, notice: 'complete!!!'
+      redirect_to root_path, notice: 'completed!!!'
     else
       flash.now[:alert] = 'failed, try again!'
       render :new
@@ -21,12 +21,17 @@ class TweetsController < ApplicationController
   def destroy
     tweet = Tweet.find(params[:id])
     tweet.destroy
+    redirect_to root_path, notice: 'deleate completed!!!'
   end
 
   def show
     @tweet = Tweet.find(params[:id])
     @comment = Comment.new
     @comments = @tweet.comments.includes(:user)
+  end
+
+  def search
+    @tweets = Tweet.search(params[:keyword])
   end
 
   private
