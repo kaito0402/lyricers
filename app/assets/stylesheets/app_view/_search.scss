@@ -20,6 +20,9 @@
         &__text{
           width: 320px;
         }
+        .btn{
+          margin-top: 20px;
+        }
       }
     }
   &__left{
@@ -65,6 +68,24 @@
               padding-top: 15px;
               font-size: 16px;
             }
+            &__likes{
+              line-height: 50px;
+                ul{
+                  display: flex;
+                  height: 60px;
+                  margin-left: 500px;
+                  .like__top{
+                    padding-right: 16px;
+                    font-size: 36px;
+                    color: rgb(236, 136, 153);
+                  }
+                  .like__bottom{
+                    font-size: 48px;
+                    color: rgb(236, 136, 153);
+                    line-height: 50px;
+                  }
+                }
+              }
             &__trash-btn{
               position: relative;
               bottom: 16px;

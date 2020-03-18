@@ -28,6 +28,7 @@ class TweetsController < ApplicationController
     @tweet = Tweet.find(params[:id])
     @comment = Comment.new
     @comments = @tweet.comments.includes(:user)
+    @like = Like.new
   end
 
   def search
