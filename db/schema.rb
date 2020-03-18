@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_12_095259) do
+ActiveRecord::Schema.define(version: 2020_03_18_100942) do
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "text", null: false
@@ -22,6 +22,15 @@ ActiveRecord::Schema.define(version: 2020_03_12_095259) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
+  create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "tweet_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["tweet_id"], name: "index_likes_on_tweet_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
   create_table "tweets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "lyric", null: false
     t.string "artist"
@@ -31,6 +40,7 @@ ActiveRecord::Schema.define(version: 2020_03_12_095259) do
     t.datetime "updated_at", null: false
     t.string "song_name"
     t.bigint "user_id"
+    t.index ["lyric", "artist", "song_name"], name: "index_tweets_on_lyric_and_artist_and_song_name", length: 64
     t.index ["user_id"], name: "index_tweets_on_user_id"
   end
 
@@ -50,5 +60,7 @@ ActiveRecord::Schema.define(version: 2020_03_12_095259) do
 
   add_foreign_key "comments", "tweets"
   add_foreign_key "comments", "users"
+  add_foreign_key "likes", "tweets"
+  add_foreign_key "likes", "users"
   add_foreign_key "tweets", "users"
 end

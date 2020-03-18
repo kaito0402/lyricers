@@ -20,6 +20,16 @@
       <div class="content__bottom__bottom__link">
         <a href="<%= tweet.link %>" target="_blank">Music Link</a>
       </div>
+      <div class="content__bottom__bottom__likes">
+        <ul>
+          <li class="like__top">  
+            <i class="fas fa-heart"></i>
+          </li>
+          <li class="like__bottom">
+            <%= tweet.likes.count%>
+          </li>
+        </ul>
+      </div>
       <div class="content__bottom__bottom__trash-btn">
         <%= link_to tweet_path(tweet.id), method: :get do %>
           <i class="fas fa-angle-double-right"></i>

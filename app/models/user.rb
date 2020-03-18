@@ -5,4 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :tweets
   has_many :comments
+  has_many :likes
+  has_many :liked_tweets, through: :likes, source: :tweet
+  def already_liked?(tweet)
+    self.likes.exists?(tweet_id: tweet.id)
+  end
 end
