@@ -22,21 +22,21 @@
           <div class="content__bottom__bottom__link">
             <a href="<%= @tweet.link %>" target="_blank">Music Link</a>
           </div>
-          <div class="content__bottom__bottom__likes">
+          <div id="like-<%= @tweet.id %>" class="content__bottom__bottom__likes">
             <ul>
               <li class="like__top">
                 <% if current_user.already_liked?(@tweet)%>
-                 <%= link_to tweet_like_path(@tweet), class: "like__top__before", method: :delete do %>
+                  <%= link_to tweet_like_path(@tweet), class: "like__top__before", method: :delete, remote: true do %>
                     <i class="fas fa-heart"></i>
                   <% end %>
                 <% else %>
-                  <%= link_to tweet_likes_path(@tweet), class: "like__top__after", method: :post do %>
+                  <%= link_to tweet_likes_path(@tweet), class: "like__top__after", method: :post, remote: true do %>
                     <i class="fas fa-heart"></i>
                   <% end %>
                 <% end %>
               </li>
               <li class="like__bottom">
-                 <%= @tweet.likes.count%>
+                <%= @tweet.likes.count%>
               </li>
             </ul>
           </div>
@@ -69,11 +69,11 @@
   <div class="comment_form">
     <% if current_user %>
       <h2>PLEASE LEAVE YOUR COMMENT!!!</h2>
-      <%= form_with(model: [@tweet, @comment], local: true) do |form| %>
+      <%= form_with(model: [@tweet, @comment], local: true, id: "new_comment") do |form| %>
         <div class="form-group">
           <%= form.text_area :text, placeholder: "comment", class:"form-control text-area" %>
         </div>
-        <%= form.submit "POST", class:"btn btn-danger btn-lg"%>
+        <%= form.submit "POST", class:"btn btn-danger btn-lg comment-btn"%>
       <% end %>
       <% else %>
         <h2>IF YOU WANT TO POST A COMMENT, PLEASE SING-UP↑</h2>
