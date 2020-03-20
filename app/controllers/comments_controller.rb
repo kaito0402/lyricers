@@ -1,13 +1,10 @@
 class CommentsController < ApplicationController
   def create
-    @comment = Comment.new(comment_params)
-    if @comment.save
-      redirect_to "/tweets/#{@comment.tweet.id}", notice: "Thank-you your comment!!!"
-    else
-      render template: "tweet/show"
-      flash.now[:alert] = "please add text."
+    @comment = Comment.create(comment_params)
+    respond_to do |format|
+      format.html {redirect_to "/tweets/#{@comment.tweet.id}"}
+      format.json
     end
-    
   end
 
   private

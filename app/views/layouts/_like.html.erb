@@ -1,0 +1,16 @@
+<ul>
+  <li class="like__top">
+    <% if current_user.already_liked?(@tweet)%>
+      <%= link_to tweet_like_path(@tweet), class: "like__top__before", method: :delete, remote: true do %>
+        <i class="fas fa-heart"></i>
+      <% end %>
+    <% else %>
+      <%= link_to tweet_likes_path(@tweet), class: "like__top__after", method: :post, remote: true do %>
+        <i class="fas fa-heart"></i>
+      <% end %>
+    <% end %>
+  </li>
+  <li class="like__bottom">
+    <%= @tweet.likes.count%>
+  </li>
+</ul>

@@ -27,12 +27,17 @@ class TweetsController < ApplicationController
   def show
     @tweet = Tweet.find(params[:id])
     @comment = Comment.new
-    @comments = @tweet.comments.includes(:user)
+    @commentss = @tweet.comments.includes(:user)
+    @comments = @commentss.reverse
     @like = Like.new
   end
 
   def search
     @tweets = Tweet.search(params[:keyword])
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   private

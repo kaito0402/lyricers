@@ -38,7 +38,7 @@
       .content{
         margin-bottom: 30px;
         padding: 10px;
-        border: outset 3px gray;
+        border: outset 8px gray;
         background-color: whitesmoke;
         &__top{
           &__lyric{
@@ -101,4 +101,13 @@
       }
     } 
   }
+}
+
+.name{
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 100px;
+  border: solid 5px white;
 }
