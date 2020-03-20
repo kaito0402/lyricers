@@ -56,11 +56,13 @@
               </li>
             </ul>
           </div>
-          <div class="content__bottom__bottom__trash-btn">
-            <%= link_to tweet_path(@tweet.id), method: :delete do %>
-              <i class="fas fa-trash-alt"></i>
-            <% end %>
-          </div>
+          <% if user_signed_in? && current_user.id == @tweet.user_id %>
+            <div class="content__bottom__bottom__trash-btn">
+              <%= link_to tweet_path(@tweet.id), method: :delete do %>
+                <i class="fas fa-trash-alt"></i>
+              <% end %>
+            </div>
+          <% end %>
         </div>
       </div>
     </div>

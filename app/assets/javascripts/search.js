@@ -63,7 +63,7 @@ $(function() {
         });
       }
       else {
-        appendErrMsgToHTML("一致するツイートはありません");
+        appendErrMsgToHTML("Sorry, not found");
       }
     }) 
     .fail(function(){
