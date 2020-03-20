@@ -59,9 +59,6 @@ header{
   }
 }
 
-
-
-
 .wrapper{
   padding-top: 80px;
   width: 100%;
@@ -90,46 +87,74 @@ header{
           top: 0px;
           left:0px;
           &__artist{
-            padding-right: 10px;
+            padding-left: 10px;
           }
         }
       }
       &__bottom{
         border-top: solid 1px black;
         padding-top: 15px;
-        font-size: 24px;
+        font-size: 16px;
         &__bottom{
-          height: 48px;
+          position: relative;
+          height: 60px;
           display: flex;
           justify-content: space-between;
+          &__link-false{
+            display: none;
+           }
           &__link{
+            height: 60px;
             padding-top: 15px;
             font-size: 16px;
+            .fa-youtube{
+              font-size: 60px;
+              text-decoration: none;
+              color: red;
+              line-height: 38px;
+              transition: all 0.5s ease 0s;
+            }
+            .fa-youtube:hover {
+              opacity: 0.6;
+            }
           }
           &__likes{
-           
-           line-height: 50px;
+            height: 60px;
+            line-height: 50px;
+            position: absolute;
+            right: 60px;
+            top: 4px;
              ul{
+               width: 100px;
+               padding-top: 8px;
                display: flex;
                height: 60px;
                margin-left: 500px;
+               line-height: 55px;
                .like__top{
+                 &__before{
+                   text-decoration: none;
+                   color: rgb(236, 136, 153);
+                 }
+                 &__after{
+                   text-decoration: none;
+                   color: gray;
+                 }
                  padding-right: 16px;
-                 font-size: 36px;
+                 font-size: 32px;
                  color: rgb(236, 136, 153);
                }
                .like__bottom{
-                 font-size: 48px;
+                 font-size: 40px;
                  color: rgb(236, 136, 153);
-                 line-height: 50px;
                }
              }
            }
           &__trash-btn{
             font-size: 40px;
-            padding: 16px 8px 16px 8px;
-            position: relative;
-              bottom: 16px;
+            position: absolute;
+            right: 20px;
+            top: 8px;
             .fas{
               color: black;
             }

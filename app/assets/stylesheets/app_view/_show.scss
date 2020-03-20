@@ -12,79 +12,97 @@
     height: calc(100vh - 80px);
     overflow: scroll;
     padding: 50px 80px 0 80px;
-   
     .content{
       padding: 10px;
       border: outset 8px gray;
-      background-color:whitesmoke;
+      background-color: whitesmoke;
       &__top{
-        
         &__lyric{
           font-size: 32px;
           padding-bottom: 20px;
         }
-        
         &__info{
           display: flex;
           position: relative;
           top: 0px;
           left:0px;
           &__artist{
-            padding-right: 10px;
+            padding-left: 10px;
           }
         }
       }
       &__bottom{
         border-top: solid 1px black;
         padding-top: 15px;
-        font-size: 24px;
+        font-size: 16px;
         &__bottom{
           position: relative;
-          height: 48px;
+          height: 60px;
           display: flex;
           justify-content: space-between;
+          &__link-false{
+           display: none;
+          }
           &__link{
+            height: 60px;
             padding-top: 15px;
             font-size: 16px;
-          }
-          &__likes{
-           position: absolute;
-           right: 72px;
-          line-height: 50px;
-            ul{
-              display: flex;
-              height: 60px;
-              .like__top{
-                padding-right: 16px;
-                font-size: 36px;
-                &__before{
-                  color: rgb(236, 136, 153);
-                }
-                &__after{
-                  color: gray;
-                }
-              }
-              .like__bottom{
-                font-size: 48px;
-                color: rgb(236, 136, 153);
-                line-height: 50px;
-              }
+            .fa-youtube{
+              font-size: 60px;
+              text-decoration: none;
+              color: red;
+              line-height: 38px;
+              transition: all 0.5s ease 0s;
+            }
+            .fa-youtube:hover {
+              opacity: 0.6;
             }
           }
+          &__likes{
+            height: 60px;
+            line-height: 50px;
+            position: absolute;
+            right: 60px;
+            top: 4px;
+             ul{
+               width: 100px;
+               padding-top: 8px;
+               display: flex;
+               height: 60px;
+               margin-left: 500px;
+               line-height: 55px;
+               .like__top{
+                 &__before{
+                   text-decoration: none;
+                   color: rgb(236, 136, 153);
+                 }
+                 &__after{
+                   text-decoration: none;
+                   color: gray;
+                 }
+                 padding-right: 16px;
+                 font-size: 32px;
+                 color: rgb(236, 136, 153);
+               }
+               .like__bottom{
+                 font-size: 40px;
+                 color: rgb(236, 136, 153);
+               }
+             }
+           }
           &__trash-btn{
             font-size: 40px;
-            padding: 16px 8px 16px 8px;
-            position: relative;
-            bottom: 24px;
+            position: absolute;
+            right: 20px;
+            top: 8px;
             .fas{
               color: black;
             }
           }
-        } 
+        }
       }
     }
     .coment-area{
-      margin-bottom: 20px;
       width: 400px;
       margin: 0 auto 20px;
       .height-line{
