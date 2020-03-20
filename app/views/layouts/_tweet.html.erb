@@ -1,25 +1,41 @@
 <div class="content">
   <div class="content__top">
     <div class="content__top__lyric">
-      <%= tweet.lyric %>
+      <%=safe_join(tweet.lyric.split("\n"),tag(:br))%>
     </div>
     <div class="content__top__info">
-      <div class="content__top__info__artist">
-        @ <%= tweet.artist%>
-      </div>
       <div class="content__top__info__sn">
-        ♪ <%= tweet.song_name%>
+        <% if tweet.song_name == "" %>
+          ♪ unknown
+        <% else %>
+          ♪ <%= tweet.song_name%>
+        <% end %>
+      </div>
+      <div class="content__top__info__artist">
+        <% if tweet.artist == ""%>
+          @ unknown
+        <% else %>
+          @ <%= tweet.artist%>
+        <% end %>
       </div>
     </div>
-  </div>
+    </div>
   <div class="content__bottom">
     <div class="content__bottom__text">
-      <%= tweet.text%>
+      <%=safe_join(tweet.text.split("\n"),tag(:br))%>
     </div>
     <div class="content__bottom__bottom">
-      <div class="content__bottom__bottom__link">
-        <a href="<%= tweet.link %>" target="_blank">Music Link</a>
-      </div>
+      <% if tweet.link == "" %>
+        <div class="content__bottom__bottom__link-false">
+          <i class="fab fa-youtube"></i>
+        </div>
+      <% else %>
+        <div class="content__bottom__bottom__link">
+          <a href="<%= tweet.link %>" target="_blank">
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+      <% end %>
       <div class="content__bottom__bottom__likes">
         <ul>
           <li class="like__top">  

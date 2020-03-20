@@ -3,29 +3,45 @@
     <div class="content">
       <div class="content__top">
         <div class="content__top__lyric">
-          <%= @tweet.lyric %>
+          <%=safe_join(@tweet.lyric.split("\n"),tag(:br))%>
         </div>
         <div class="content__top__info">
-          <div class="content__top__info__artist">
-            @ <%= @tweet.artist%>
-          </div>
           <div class="content__top__info__sn">
-            ♪<%= @tweet.song_name%>
+            <% if @tweet.song_name == "" %>
+              ♪ unknown
+            <% else %>
+              ♪ <%= @tweet.song_name%>
+            <% end %>
+          </div>
+          <div class="content__top__info__artist">
+            <% if @tweet.artist == ""%>
+               @ unknown
+            <% else %>
+              @ <%= @tweet.artist%>
+            <% end %>
           </div>
         </div>
       </div>
       <div class="content__bottom">
         <div class="content__bottom__text">
-          <%= @tweet.text%>
+          <%=safe_join(@tweet.text.split("\n"),tag(:br))%>
         </div>
         <div class="content__bottom__bottom">
-          <div class="content__bottom__bottom__link">
-            <a href="<%= @tweet.link %>" target="_blank">Music Link</a>
+          <% if @tweet.link == "" %>
+            <div class="content__bottom__bottom__link-false">
+              <i class="fab fa-youtube"></i>
+            </div>
+          <% else %>
+            <div class="content__bottom__bottom__link">
+              <a href="<%= @tweet.link %>" target="_blank">
+                <i class="fab fa-youtube"></i>
+              </a>
           </div>
-          <div id="like-<%= @tweet.id %>" class="content__bottom__bottom__likes">
+          <% end %>
+          <div class="content__bottom__bottom__likes">
             <ul>
-              <li class="like__top">
-                <% if current_user.already_liked?(@tweet)%>
+              <li class="like__top"> 
+                <% if current_user.already_liked?(@tweet)%> 
                   <%= link_to tweet_like_path(@tweet), class: "like__top__before", method: :delete, remote: true do %>
                     <i class="fas fa-heart"></i>
                   <% end %>
@@ -40,13 +56,11 @@
               </li>
             </ul>
           </div>
-          <% if user_signed_in? && @tweet.user_id == current_user.id%>
-            <div class="content__bottom__bottom__trash-btn">
-              <%= link_to tweet_path(@tweet.id), method: :delete do %>
-                <i class="fas fa-trash-alt trash-btn"></i>
-              <% end %>
-            </div> 
-          <% end %>
+          <div class="content__bottom__bottom__trash-btn">
+            <%= link_to tweet_path(@tweet.id), method: :delete do %>
+              <i class="fas fa-trash-alt"></i>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
