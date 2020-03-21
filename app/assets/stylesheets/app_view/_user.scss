@@ -53,3 +53,12 @@
   }
   
 }
+
+#error_explanation{
+  color: white;
+  .error-message{
+    padding: 5px 0 5px 5px;
+    width: 240px;
+    border: double 2px white;
+  }
+}

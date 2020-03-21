@@ -1,5 +1,8 @@
 <div class="content">
   <div class="content__top">
+    <div class="content__top__user_name">
+      <%= tweet.user.name%>
+    </div>
     <div class="content__top__lyric">
       <%=safe_join(tweet.lyric.split("\n"),tag(:br))%>
     </div>

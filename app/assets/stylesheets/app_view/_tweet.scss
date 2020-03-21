@@ -77,6 +77,11 @@ header{
       border: outset 8px gray;
       background-color: whitesmoke;
       &__top{
+        &__user_name{
+          font-size: 24px;
+          font-weight: bold;
+         
+        }
         &__lyric{
           font-size: 32px;
           padding-bottom: 10px;
@@ -183,12 +188,20 @@ header{
       margin-top: 20px;
       &--top{
         margin-top: 20px;
+        width: 764px;
+        
       }
       &__midle{
         width: 475px;
       }
       &__left{
-        margin-right: 50px;
+        margin-right: 32px;
+      }
+      &__link{
+        width: 764px;
+      }
+      &__bottom{
+        width: 764px;
       }
     }
     .middle{
