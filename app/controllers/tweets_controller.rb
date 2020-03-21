@@ -33,7 +33,7 @@ class TweetsController < ApplicationController
   end
 
   def search
-    @tweets = Tweet.search(params[:keyword])
+    @tweets = Tweet.search(params[:keyword]).includes(:user)
     respond_to do |format|
       format.html
       format.json

@@ -1,7 +1,7 @@
 <div class="content">
   <div class="content__top">
     <div class="content__top__user_name">
-      <%= tweet.user.name%>
+      <%= link_to "#{tweet.user.name}", "/users/#{tweet.user.id}", class: "personal"%>
     </div>
     <div class="content__top__lyric">
       <%=safe_join(tweet.lyric.split("\n"),tag(:br))%>
