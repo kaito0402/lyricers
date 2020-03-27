@@ -79,7 +79,6 @@ header{
       &__top{
         &__user_name{
           font-size: 24px;
-          font-weight: bold;
           .personal{
             text-decoration: none;
             color: black;
@@ -88,6 +87,7 @@ header{
         &__lyric{
           font-size: 32px;
           padding-bottom: 10px;
+          font-weight: bold;
         }
         &__info{
           display: flex;
@@ -103,7 +103,11 @@ header{
         border-top: solid 1px black;
         padding-top: 15px;
         font-size: 16px;
+        &__text{
+          font-weight: bold; 
+        }
         &__bottom{
+          font-weight: bold;
           position: relative;
           height: 60px;
           display: flex;
@@ -128,18 +132,21 @@ header{
           }
           &__likes{
             height: 60px;
-            line-height: 50px;
+            width: 100px;
             position: absolute;
-            right: 60px;
-            top: 4px;
+            top: 16;
+            right: 80px;
              ul{
                width: 100px;
                padding-top: 8px;
                display: flex;
                height: 60px;
-               margin-left: 500px;
-               line-height: 55px;
+
                .like__top{
+                 line-height: 50px;
+                padding-right: 16px;
+                font-size: 40px;
+                color: rgb(236, 136, 153);
                  &__before{
                    text-decoration: none;
                    color: rgb(236, 136, 153);
@@ -148,21 +155,22 @@ header{
                    text-decoration: none;
                    color: gray;
                  }
-                 padding-right: 16px;
-                 font-size: 32px;
-                 color: rgb(236, 136, 153);
+                
                }
                .like__bottom{
-                 font-size: 40px;
+                 font-size: 48px;
                  color: rgb(236, 136, 153);
+                 line-height: 50px;
                }
              }
            }
           &__trash-btn{
-            font-size: 40px;
+            font-size: 56px;
             position: absolute;
+            top: -6px;
             right: 20px;
-            top: 8px;
+            
+           
             .fas{
               color: black;
             }

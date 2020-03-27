@@ -2,8 +2,8 @@
   <div class="UserPage-wrapper__left">
     <div class="UserPage-wrapper__left__content">
       <h1><%= @name %></h1>
-      <%= link_to like_show_user_path(@user.id), class: "move_like" do %>
-        <i class="fas fa-heart"> index</i> 
+      <%= link_to user_path(@user.id), class: "move_like" do %>
+        <i class="fas fa-paper-plane"> index</i> 
       <% end %>
     </div>
   </div>

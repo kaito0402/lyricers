@@ -10,3 +10,5 @@ class Tweet < ApplicationRecord
     Tweet.where('lyric LIKE(?) OR artist LIKE(?) OR song_name LIKE(?)',"%#{search}%","%#{search}%","%#{search}%")
   end
 end
+
+
