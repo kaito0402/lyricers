@@ -6,5 +6,7 @@ FactoryBot.define do
     link {"oooooooooooooooo"}
     text {"いいね"}
     song_name {"このままで"}
+    created_at { Faker::Time.between(from: DateTime.now - 2, to: DateTime.now) }
+    user
   end
 end
