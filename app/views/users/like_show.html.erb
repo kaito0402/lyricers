@@ -9,9 +9,7 @@
   </div>
   <div class="UserPage-wrapper__right">
     <div class="contents">
-      <% @tweets.each do |tweet| %>
-        <%= render partial: "layouts/tweet", locals: { tweet: tweet }%>
-      <% end %>
+      <%= render partial: "layouts/tweet", collection: @tweets %>
     </div>
   </div>
 </div>
