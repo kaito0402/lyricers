@@ -6,4 +6,6 @@ json.array! @tweets do |tweet|
   json.text tweet.text
   json.song_name tweet.song_name
   json.likes tweet.likes.count
+  json.name tweet.user.name
+  json.user_id tweet.user.id
 end

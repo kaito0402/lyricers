@@ -1,18 +1,20 @@
 $(function() {
   let search_list = $(".contents");
   function appendTweet(tweet) {
+    let signedin = gon.signed_user;
     let html =`<div class="content">
                 <div class="content__top">
+                  <div class="content__top__user_name">
+                    <a href="/users/${tweet.user_id}" data-method="get" class="personal">
+                      ${tweet.name}
+                    </a>
+                  </div>
                   <div class="content__top__lyric">
                     ${tweet.lyric}
                   </div>
                   <div class="content__top__info">
-                    <div class="content__top__info__artist">
-                      @ ${tweet.artist}
-                    </div>
-                    <div class="content__top__info__sn">
-                      ♪ ${tweet.song_name}
-                    </div>
+                  ${tweet.song_name == "" ? `<div class="content__top__info__sn">♪ unknown</div>` : `<div class="content__top__info__sn">♪ ${tweet.song_name}</div>`}
+                  ${tweet.artist == "" ? `<div class="content__top__info__artist">@ unknown</div>` : `<div class="content__top__info__artist">@ ${tweet.artist}</div>`}
                   </div>
                 </div>
                 <div class="content__bottom">
@@ -20,9 +22,12 @@ $(function() {
                     ${tweet.text}
                   </div>
                   <div class="content__bottom__bottom">
-                    <div class="content__bottom__bottom__link">
-                      <a href="${tweet.link}" target="_blank">Music Link</a>
-                    </div>
+                    ${tweet.link == "" ? `<div class="content__bottom__bottom__link-false">
+                    <i class="fab fa-youtube"></i>
+                  </div>` : `<div class="content__bottom__bottom__link">
+                    <a href="${tweet.link}" target="_blank"><i class="fab fa-youtube"></i></a>
+                  </div>`}
+                    
                     <div class="content__bottom__bottom__likes">
                       <ul>
                         <li class="like__top">  
@@ -34,9 +39,10 @@ $(function() {
                       </ul>
                     </div>
                     <div class="content__bottom__bottom__trash-btn">
-                      <a href="/tweets/${tweet.id}" data-method="get">
-                        <i class="fas fa-angle-double-right"></i>
-                      </a>
+                      ${signedin ? `<a href="/tweets/${tweet.id}" data-method="get">
+                      <i class="fas fa-angle-double-right"></i>
+                    </a>` : ""}
+                      
                     </div>
                   </div>
                 </div>

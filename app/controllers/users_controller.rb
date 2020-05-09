@@ -1,13 +1,17 @@
 class UsersController < ApplicationController
+  before_action :find_user
   def show
-    @user = User.find(params[:id])
     @name = @user.name
     @tweets = @user.tweets
   end
 
   def like_show
-    @user = User.find(params[:id])
     @name = @user.name
     @tweets = @user.liked_tweets
+  end
+
+  private
+  def find_user
+    @user = User.find(params[:id])
   end
 end
