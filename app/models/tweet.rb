@@ -1,4 +1,6 @@
 class Tweet < ApplicationRecord
+  VALID_YOUTUBE_URL = /(\Ahttps:\/\/www\.youtube\.com\/watch\?v=)+[\w]{11}\z/
+  validates :link, format: { with: VALID_YOUTUBE_URL }
   validates :lyric, :text, presence: true
   belongs_to :user
   has_many :comments, dependent: :destroy
