@@ -1,24 +1,27 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Lyrickers
+====
 
-Things you may want to cover:
 
-* Ruby version
+## アプリ概要
+===
+歌詞共有アプリ。ユーザーが他者と共有したい歌詞を自分のコメントと共に投稿することができ、投稿に対して他のユーザーから「いいね」や「コメント」などの機能を通してリアクションすることができる。
 
-* System dependencies
+- 使用言語：Ruby,JavaScript
+- フレームワーク：Rails
+- db：Mysql
 
-* Configuration
+## 機能
+===
+- deviseを用いたユーザー管理機能
+- 投稿機能。以下の情報を登録できる。
+  - ユーザーの登録したい歌詞
+  - 曲名
+  - アーティスト
+  - YouTubeのリンク
+  - コメント
+- 投稿消去機能
+- 投稿に対するいいね、コメント機能
+- 検索機能（検索ワードに含まれる歌詞・曲名・アーティストを検索できる）
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
