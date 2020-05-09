@@ -33,6 +33,7 @@ class TweetsController < ApplicationController
   end
 
   def search
+    gon.signed_user = user_signed_in?
     @tweets = Tweet.search(params[:keyword]).includes(:user)
     respond_to do |format|
       format.html
