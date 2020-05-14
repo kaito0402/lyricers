@@ -134,6 +134,9 @@
             height: 60px;
             display: flex;
             justify-content: space-between;
+             &__link-false{
+              display: none;
+             }
             &__link{
               height: 60px;
               padding-top: 15px;
@@ -151,13 +154,13 @@
             }
             &__likes{
               height: 60px;
-             line-height: 50px;
+              line-height: 50px;
                ul{
                  padding-top: 8px;
                  display: flex;
                  height: 60px;
                  margin-left: 500px;
-                 line-height: 55px;
+                  line-height: 55px;
                  .like__top{
                    padding-right: 16px;
                    font-size: 32px;
