@@ -134,8 +134,9 @@
             height: 60px;
             display: flex;
             justify-content: space-between;
+            position: relative;
              &__link-false{
-              display: none;
+              visibility:hidden
              }
             &__link{
               height: 60px;
@@ -152,6 +153,31 @@
                 opacity: 0.6;
               }
             }
+            &__comment{
+              height: 60px;
+              width: 100px;
+              position: absolute;
+              top: 16;
+              right: 160px;
+              margin-right: 40px;
+              ul{
+                width: 100px;
+                padding-top: 8px;
+                display: flex;
+                height: 60px;
+                .comment-top{
+                  line-height: 50px;
+                  padding-right: 16px;
+                  font-size: 40px;
+                  color: rgba(17, 15, 16, 0.651);
+                }
+                .comment-bottom{
+                  font-size: 48px;
+                  color: rgba(17, 15, 16, 0.651);
+                  line-height: 50px;
+                }
+              }
+            }
             &__likes{
               height: 60px;
               line-height: 50px;
@@ -163,11 +189,11 @@
                   line-height: 55px;
                  .like__top{
                    padding-right: 16px;
-                   font-size: 32px;
+                   font-size: 40px;
                    color: rgb(236, 136, 153);
                  }
                  .like__bottom{
-                   font-size: 40px;
+                   font-size: 48px;
                    color: rgb(236, 136, 153);
                  }
                }

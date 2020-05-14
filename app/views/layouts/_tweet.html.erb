@@ -39,6 +39,16 @@
           </a>
         </div>
       <% end %>
+      <div class="content__bottom__bottom__comment">
+        <ul>
+          <li class="comment-top">
+            <i class="far fa-comment-dots"></i>
+          </li>
+          <li class="comment-bottom">
+            <%= tweet.comments.count%>
+          </li>
+        </ul>
+      </div>
       <div class="content__bottom__bottom__likes">
         <ul>
           <li class="like__top">  
