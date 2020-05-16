@@ -1,5 +1,5 @@
 class Tweet < ApplicationRecord
-  VALID_YOUTUBE_URL = /(\Ahttps:\/\/www\.youtube\.com\/watch\?v=)+[\w]{11}\z/
+  VALID_YOUTUBE_URL = /(\Ahttps:\/\/www\.youtube\.com\/watch\?v=)+[\w \-]{11}\z/
   validates :link, format: { with: VALID_YOUTUBE_URL }
   validates :lyric, :text, presence: true
   validates :lyric, :text, length: { maximum: 200 }
@@ -12,5 +12,3 @@ class Tweet < ApplicationRecord
     Tweet.where('lyric LIKE(?) OR artist LIKE(?) OR song_name LIKE(?)',"%#{search}%","%#{search}%","%#{search}%")
   end
 end
-
-
